@@ -11,11 +11,10 @@
 |
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Authentication routes.
 Auth::routes();
 Route::get('google/redirect', 'Auth\GoogleAuthController@redirect');
 Route::get('google/callback', 'Auth\GoogleAuthController@callback');
+
+// Dashboard routes.
+Route::get('/', 'DashboardController@index');

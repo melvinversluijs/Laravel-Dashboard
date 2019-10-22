@@ -1,0 +1,11 @@
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: $grid-gap;
+    min-height: 90vh;
+
+    .widget {
+        background-color: limegreen;
+    }
+}

@@ -15,9 +15,9 @@ body {
 .dashboard {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
   min-height: 90vh;
+  padding: 0.5rem 1rem;
 }
 
 .dashboard .widget {

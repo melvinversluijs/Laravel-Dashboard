@@ -8,11 +8,15 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <a href="/google/redirect" class="login-with-google">Login with Google</a>
+                    <div class="social-login d-flex flex-column align-items-center">
+                        <a href="/google/redirect" class="btn btn-light">Login with Google</a>
+                        <span class="d-block my-2">OR</span>
+                    </div>
 
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
+                        <h3 style="text-align: center;">Login using email</h3>
                         <div class="form-group row">
                             <label for="email"
                                 class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>

@@ -1,10 +1,17 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Imports.
+// Abstract.
 @import 'abstract/variables';
-@import 'base/base';
-@import 'components/dashboard';
+@import 'abstract/helpers';
+@import 'abstract/typography';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// Base.
+@import 'base/reset';
+
+// Components.
+@import 'components/buttons';
+@import 'components/forms';
+
+// Layout.
+@import 'layout/header';

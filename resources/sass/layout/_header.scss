@@ -1,0 +1,41 @@
+.header {
+    // Base.
+    border-bottom: 1px solid $color-grey-light;
+
+    .container {
+        display: flex;
+        padding: 0.5rem 0;
+    }
+
+    a,
+    a:link,
+    a:visited {
+        text-decoration: none;
+        color: $color-black;
+    }
+
+    // Brand logo.
+    .brand {
+        font-size: 1.5rem;
+        margin-right: auto;
+    }
+
+    // Navbar.
+    .navbar {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-list {
+        list-style: none;
+        display: flex;
+    }
+
+    .nav-item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+}

@@ -5,3 +5,23 @@ body {
     line-height: $line-height-base;
     color: $color-black;
 }
+
+// Headings.
+h1 {
+    font-size: $font-size-large;
+    font-weight: $font-size-base;
+}
+
+// Links.
+a {
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        color: $color-primary;
+    }
+
+    &:hover {
+        color: darken($color-primary, 5%);
+    }
+}

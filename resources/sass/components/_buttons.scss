@@ -1,0 +1,53 @@
+.btn {
+    // Base.
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        border: none;
+        color: $color-black;
+        font-size: $font-size-base;
+        cursor: pointer;
+        display: inline-block;
+        border-radius: $border-radius-base;
+        background-color: transparent;
+        margin: 0.5rem 0;
+        padding: 0.5rem 1rem;
+        transition: transform 0.2s;
+        width: 100%;
+    }
+
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 0.3rem 0.6rem rgba($color-black, 0.2);
+    }
+
+    // Color variants.
+    &.btn-social,
+    &.btn-light {
+        border: 1px solid $color-grey-light;
+        background-color: #fff;
+
+        &:hover,
+        &:focus {
+            border: 1px solid $color-black;
+        }
+    }
+
+    // Social buttons.
+    &.btn-social {
+        display: flex;
+        align-items: center;
+
+        i {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            line-height: $line-height-base;
+        }
+    }
+}

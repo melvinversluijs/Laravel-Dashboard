@@ -6,6 +6,12 @@
         <h1>{{ __('Login') }}</h1>
 
         <div class="social-buttons">
+            <a href="{{ \url('github/redirect') }}" class="btn btn-social">
+                <i class="fab fa-github"></i>
+                <span>
+                    {{ __('auth.loginWith', ['provider' => 'Github']) }}
+                </span>
+            </a>
             <a href="{{ \url('google/redirect') }}" class="btn btn-social">
                 <i class="fab fa-google"></i>
                 <span>

@@ -13,6 +13,8 @@
 
 // Authentication routes.
 Auth::routes();
+Route::get('github/redirect', 'Auth\GithubAuthController@redirect');
+Route::get('github/callback', 'Auth\GithubAuthController@callback');
 Route::get('google/redirect', 'Auth\GoogleAuthController@redirect');
 Route::get('google/callback', 'Auth\GoogleAuthController@callback');
 

@@ -21,17 +21,17 @@
         </div>
 
         <div class="separator">
-            <span>OR</span>
+            <span>{{ __('or') }}</span>
         </div>
 
         <form method="POST" action="{{ route('login') }}" class="form">
             @csrf
 
-            <h3>Login using email</h3>
+            <h3>{{ __('Login using email') }}</h3>
 
             <div class="form-group">
                 <label for="email" for="email">
-                    {{ __('E-Mail Address') }}
+                    {{ __('Email') }}
 
                     <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email"
                         value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -56,13 +56,13 @@
                 </span>
                 @enderror
                 <a class="forgot-password" href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
+                    {{ __('Forgot your password?') }}
                 </a>
             </div>
 
             <div class="form-group">
                 <label for="remember">
-                    {{ __('Remember Me') }}
+                    {{ __('Remember me') }}
 
                     <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                 </label>
@@ -78,7 +78,7 @@
         <p>
             {{ __('No account yet?') }}
             <a href="{{ \url('/register') }}">
-                {{ 'Register now' }}
+                {{ 'Register now!' }}
             </a>
         </p>
     </div>

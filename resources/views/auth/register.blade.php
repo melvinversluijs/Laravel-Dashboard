@@ -21,13 +21,13 @@
         </div>
 
         <div class="separator">
-            <span>OR</span>
+            <span>{{ __('or') }}</span>
         </div>
 
         <form method="POST" action="{{ route('register') }}" class="form">
             @csrf
 
-            <h3>Register using email</h3>
+            <h3>{{ __('Register using email') }}</h3>
 
             <div class="form-group">
                 <label for="name">
@@ -46,7 +46,7 @@
 
             <div class="form-group">
                 <label for="email">
-                    {{ __('E-Mail Address') }}
+                    {{ __('Email') }}
 
                     <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email"
                         value="{{ old('email') }}" required autocomplete="email">
@@ -88,6 +88,13 @@
                 </button>
             </div>
         </form>
+
+        <p>
+            {{ __('Already have an account?') }}
+            <a href="{{ \url('/login') }}">
+                {{ 'Login now!' }}
+            </a>
+        </p>
     </div>
 </div>
 @endsection

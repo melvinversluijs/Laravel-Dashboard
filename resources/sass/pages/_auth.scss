@@ -6,6 +6,34 @@
     margin: 1rem 0;
 }
 
-.auth-form {
-    display: none;
+.separator {
+    margin: 1rem 0;
+
+    span {
+        position: relative;
+        text-transform: uppercase;
+
+        &::before,
+        &::after {
+            content: '';
+            width: 6rem;
+            height: 1px;
+            background-color: $color-black;
+            position: absolute;
+            display: inline-block;
+            top: 50%;
+        }
+
+        &::before {
+            right: 2rem;
+        }
+
+        &::after {
+            left: 2rem;
+        }
+    }
+}
+
+.forgot-password {
+    font-size: 0.8rem;
 }

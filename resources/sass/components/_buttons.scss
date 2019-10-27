@@ -28,6 +28,17 @@
     }
 
     // Color variants.
+    &.btn-primary {
+        color: $color-white;
+        background-color: $color-primary-light;
+        border: 1px solid $color-primary;
+
+        &:hover,
+        &:focus {
+            background-color: $color-primary;
+        }
+    }
+
     &.btn-social,
     &.btn-light {
         border: 1px solid $color-grey-light;

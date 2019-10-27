@@ -5,7 +5,7 @@
 
 body {
   font-family: "Nunito", sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.6;
   color: #152934;
@@ -13,7 +13,14 @@ body {
 
 h1 {
   font-size: 1.5rem;
-  font-weight: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
 }
 
 a,
@@ -46,7 +53,7 @@ body {
   text-decoration: none;
   border: none;
   color: #152934;
-  font-size: 0.9rem;
+  font-size: 1rem;
   cursor: pointer;
   display: inline-block;
   border-radius: 3px;
@@ -65,6 +72,17 @@ body {
 .btn:active {
   transform: translateY(-1px);
   box-shadow: 0 0.3rem 0.6rem rgba(21, 41, 52, 0.2);
+}
+
+.btn.btn-primary {
+  color: #f8fafc;
+  background-color: #5596e6;
+  border: 1px solid #3d70b2;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+  background-color: #3d70b2;
 }
 
 .btn.btn-social,
@@ -89,6 +107,42 @@ body {
   font-size: 1.2rem;
   margin-right: 0.5rem;
   line-height: 1.6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form input[type=text],
+.form input[type=email],
+.form input[type=password] {
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #152934;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  color: #152934;
+}
+
+.form input[type=text]:focus,
+.form input[type=email]:focus,
+.form input[type=password]:focus {
+  border: 1px solid #26cfb9;
+}
+
+.form input[type=checkbox] {
+  display: inline-block;
+}
+
+.form .form-group {
+  margin: 0.5rem 0;
+  width: 100%;
 }
 
 .header {
@@ -137,7 +191,35 @@ body {
   margin: 1rem 0;
 }
 
-.auth-form {
-  display: none;
+.separator {
+  margin: 1rem 0;
+}
+
+.separator span {
+  position: relative;
+  text-transform: uppercase;
+}
+
+.separator span::before,
+.separator span::after {
+  content: "";
+  width: 6rem;
+  height: 1px;
+  background-color: #152934;
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+}
+
+.separator span::before {
+  right: 2rem;
+}
+
+.separator span::after {
+  left: 2rem;
+}
+
+.forgot-password {
+  font-size: 0.8rem;
 }
 

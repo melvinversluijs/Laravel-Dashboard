@@ -9,7 +9,14 @@ body {
 // Headings.
 h1 {
     font-size: $font-size-large;
-    font-weight: $font-size-base;
+    font-weight: $font-weight-base;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: $font-size-medium;
+    font-weight: $font-weight-base;
+    margin-bottom: 1rem;
 }
 
 // Links.
@@ -18,10 +25,10 @@ a {
     &:link,
     &:visited {
         text-decoration: none;
-        color: $color-primary;
+        color: $color-secondary;
     }
 
     &:hover {
-        color: darken($color-primary, 5%);
+        color: darken($color-secondary, 5%);
     }
 }

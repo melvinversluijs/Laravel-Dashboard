@@ -162,6 +162,8 @@ body {
 .header .container {
   display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
+          align-items: center;
   padding: 0.5rem 0;
 }
 
@@ -188,6 +190,8 @@ body {
   list-style: none;
   display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
+          align-items: center;
 }
 
 .header .nav-item {
@@ -196,6 +200,21 @@ body {
 
 .header .nav-item:not(:last-child) {
   margin-right: 1rem;
+}
+
+.header .nav-user-link {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.header .nav-user-image {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
 }
 
 .auth-container {

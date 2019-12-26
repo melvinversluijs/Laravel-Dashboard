@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,7 @@
 
 // Authentication routes.
 Auth::routes();
+Route::view('account', 'auth.account')->name('account')->middleware('auth');
 Route::get('github/redirect', 'Auth\GithubAuthController@redirect');
 Route::get('github/callback', 'Auth\GithubAuthController@callback');
 Route::get('google/redirect', 'Auth\GoogleAuthController@redirect');

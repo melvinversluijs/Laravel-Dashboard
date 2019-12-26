@@ -42,8 +42,9 @@
                         </li>
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                {{ Auth::user()->name }}
+                            <a class="nav-user-link" href="{{ route('account') }}">
+                                <img class="nav-user-image" src="{{ Auth::user()->avatar }}"
+                                    alt="{{ Auth::user()->name }}">
                             </a>
                         </li>
                         <li class="nav-item">

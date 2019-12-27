@@ -21,7 +21,7 @@
 
 <body>
     <div id="app">
-        <header class="header">
+        <header class="header{{ isset($fixedHeader) ? ' fixed' : '' }}">
             <div class="container">
                 <a class="brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Dashboard') }}
@@ -63,6 +63,7 @@
             @yield('content')
         </main>
     </div>
+
     <!-- Scripts -->
     @yield('footer-scripts')
     <script src="{{ mix('/js/app.js') }}" defer></script>

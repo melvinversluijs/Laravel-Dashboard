@@ -4,5 +4,8 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./components/Example');
-require('./components/widgets/Clock');
+require("./components/Example");
+require("./components/widgets/Clock");
+
+// Little helper scripts.
+require("./helpers/hide-header");

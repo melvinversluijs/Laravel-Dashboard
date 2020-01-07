@@ -1,25 +1,15 @@
 const header = document.querySelector(".header.fixed");
+const toggleHeaderBtn = document.querySelector(".toggle-header");
 const hiddenClass = "hidden";
-let timeout;
 
 /**
- * Handle event.
+ * Toggle header.
  */
-const handleEvent = () => {
-    // Clear timeout and remove the hidden class on triggered event.
-    clearTimeout(timeout);
-    header.classList.remove(hiddenClass);
-
-    // Set a new timeout.
-    timeout = setTimeout(() => {
-        header.classList.add(hiddenClass);
-    }, 3000);
+const toggleHeader = () => {
+    console.log("triggered");
+    header.classList.toggle(hiddenClass);
 };
 
-// Only use it on fixed headers.
-if (header) {
-    // Initial call.
-    handleEvent();
-    // Add the event listener for mouse movement.
-    document.addEventListener("mousemove", handleEvent);
+if (header && toggleHeaderBtn) {
+    toggleHeaderBtn.addEventListener("click", toggleHeader);
 }

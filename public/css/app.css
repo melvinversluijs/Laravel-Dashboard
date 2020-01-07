@@ -220,12 +220,17 @@ body {
 
 .header.fixed {
   position: fixed;
-  z-index: 10;
+  z-index: 5;
   width: 100%;
 }
 
 .header.fixed.hidden {
   display: none;
+}
+
+.toggle-header-container {
+  position: fixed;
+  z-index: 10;
 }
 
 .auth-container {

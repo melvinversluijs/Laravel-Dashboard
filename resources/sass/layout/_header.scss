@@ -58,11 +58,17 @@
     // Fixed header.
     &.fixed {
         position: fixed;
-        z-index: 10;
+        z-index: 5;
         width: 100%;
 
         &.hidden {
             display: none;
         }
     }
+}
+
+// Toggle header button (For fixed header).
+.toggle-header-container {
+    position: fixed;
+    z-index: 10;
 }

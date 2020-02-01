@@ -6,6 +6,3 @@
 
 require("./components/Example");
 require("./components/widgets/Clock");
-
-// Little helper scripts.
-require("./helpers/hide-header");

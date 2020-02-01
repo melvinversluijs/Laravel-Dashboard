@@ -15,7 +15,7 @@ class DashboardController extends Controller
     public function index()
     {
         return \view('dashboard.index', [
-            'widgets'     => [
+            'widgets' => [
                 [
                     'id'      => 'clock',
                     'start-x' => 7,
@@ -24,7 +24,6 @@ class DashboardController extends Controller
                     'end-y'   => 1,
                 ],
             ],
-            'fixedHeader' => true,
         ]);
     }
 }

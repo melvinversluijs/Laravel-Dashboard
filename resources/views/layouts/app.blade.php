@@ -21,7 +21,7 @@
 
 <body>
     <div id="app">
-        <header class="header{{ isset($fixedHeader) ? ' fixed' : '' }}">
+        <header class="header">
             <div class="container">
                 <a class="brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Dashboard') }}
@@ -58,13 +58,6 @@
                 </nav>
             </div>
         </header>
-        @if ($fixedHeader)
-        <div class="toggle-header-container">
-            <button type="button" class="toggle-header">
-                Toggle
-            </button>
-        </div>
-        @endif
 
         <main class="content">
             @yield('content')

@@ -4,5 +4,5 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require("./components/Example");
-require("./components/widgets/Clock");
+// Include dashboard component.
+require("./components/Dashboard");

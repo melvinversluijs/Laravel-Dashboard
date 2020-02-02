@@ -36,9 +36,3 @@ const Clock = () => {
 
 // Export component.
 export default Clock;
-
-// Insert component in element with id: 'clock'
-const element = document.getElementById("clock");
-if (element) {
-    ReactDOM.render(<Clock />, element);
-}

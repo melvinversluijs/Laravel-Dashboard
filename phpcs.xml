@@ -3,12 +3,15 @@
     <description>The coding standard for PHP_CodeSniffer itself.</description>
     
     <arg name="basepath" value="."/>
+    <arg name="tab-width" value="4"/>
+    <arg name="extensions" value="php,inc" />
+    <arg name="report" value="summary"/>
     <arg name="colors"/>
-    
+    <arg value="sp"/>
+
     <file>app</file>
     <file>routes</file>
     <file>tests</file>
 
-    <arg name="tab-width" value="4"/>
-    <rule ref="PSR12" />
+    <rule ref="PSR12"/>
 </ruleset>

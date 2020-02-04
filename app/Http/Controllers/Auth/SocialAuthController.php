@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Http\RedirectResponse;
 use Laravel\Socialite\Facades\Socialite;
 
 /**
@@ -11,20 +12,13 @@ use Laravel\Socialite\Facades\Socialite;
  */
 abstract class SocialAuthController extends Controller
 {
-    /**
-     * Redirect to social medium signin.
-     *
-     * @return void
-     */
-    public function redirect()
+    public function redirect(): RedirectResponse
     {
         return Socialite::driver($this->getProvider())->redirect();
     }
 
     /**
-     * Callback handler
-     *
-     * @return void
+     * Callback handler.
      */
     public function callback()
     {
@@ -46,15 +40,14 @@ abstract class SocialAuthController extends Controller
             auth()->login($existingUser, true);
         } else {
             $user = User::create([
-                'name'        => $user->name,
-                'email'       => $user->email,
-                'avatar'      => $user->avatar,
-                'provider'    => $provider,
+                'name' => $user->name,
+                'email' => $user->email,
+                'avatar' => $user->avatar,
+                'provider' => $provider,
                 'provider_id' => $user->id,
             ]);
 
             auth()->login($user, true);
-
         }
 
         return \redirect('/');
@@ -62,8 +55,6 @@ abstract class SocialAuthController extends Controller
 
     /**
      * Get the provider.
-     *
-     * @return string
      */
     abstract protected function getProvider(): string;
 }

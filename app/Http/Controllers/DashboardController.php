@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use Illuminate\View\View;
+
 use function view;
 
-/**
- * Dashboard controller.
- */
 class DashboardController extends Controller
 {
     public function index(): View

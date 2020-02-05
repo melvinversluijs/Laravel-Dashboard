@@ -12,7 +12,8 @@ jobs:
           name: Composer version
           command: composer --version
       - run:
-          name: composer install --no-interaction
+          name: Composer install
+          command: composer install --no-interaction
       - run:
           name: PHP CodeSniffer
           command: composer run test:phpcs

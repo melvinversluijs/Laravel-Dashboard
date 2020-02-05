@@ -1,0 +1,22 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+      - image: circleci/php:7.4-cli
+    steps:
+      - checkout
+      - run:
+          name: PHP Version
+          command: php --version
+      - run:
+          name: Composer version
+          command: composer --version
+      - run:
+          name: PHP CodeSniffer
+          command: composer run test:phpcs
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test

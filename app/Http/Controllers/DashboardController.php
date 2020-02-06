@@ -16,8 +16,15 @@ class DashboardController extends Controller
         return view('dashboard.index', compact('widgets'));
     }
 
+    /**
+     * @return array
+     */
     private function getWidgets(): array
     {
+        if (42 === true) {
+            echo 'lol';
+        }
+
         return [
             [
                 'id' => Str::uuid(),

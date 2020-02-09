@@ -1,19 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
+// phpcs:disable SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly
 class Kernel extends HttpKernel
 {
     /**
      * The application's global HTTP middleware stack.
-     *
      * These middleware are run during every request to your application.
      *
-     * @var array
+     * @var array<int, string> $middleware
      */
-    protected $middleware = [
+    protected array $middleware = [
         \App\Http\Middleware\TrustProxies::class,
         \App\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
@@ -24,9 +26,9 @@ class Kernel extends HttpKernel
     /**
      * The application's route middleware groups.
      *
-     * @var array
+     * @var array<int, string> $middlewareGroups
      */
-    protected $middlewareGroups = [
+    protected array $middlewareGroups = [
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
@@ -45,12 +47,11 @@ class Kernel extends HttpKernel
 
     /**
      * The application's route middleware.
-     *
      * These middleware may be assigned to groups or used individually.
      *
-     * @var array
+     * @var array<int, string> $routeMiddleware
      */
-    protected $routeMiddleware = [
+    protected array $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
@@ -65,12 +66,11 @@ class Kernel extends HttpKernel
 
     /**
      * The priority-sorted list of middleware.
-     *
      * This forces non-global middleware to always be in the given order.
      *
-     * @var array
+     * @var array<int, string> $middlewarePriority
      */
-    protected $middlewarePriority = [
+    protected array $middlewarePriority = [
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \App\Http\Middleware\Authenticate::class,
@@ -80,3 +80,4 @@ class Kernel extends HttpKernel
         \Illuminate\Auth\Middleware\Authorize::class,
     ];
 }
+// phpcs:enable SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly

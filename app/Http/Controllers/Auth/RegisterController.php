@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -13,16 +15,16 @@ class RegisterController extends Controller
 {
     use RegistersUsers;
 
-    /**
-     * @var string
-     */
-    protected $redirectTo = '/';
+    protected string $redirectTo = '/';
 
     public function __construct()
     {
         $this->middleware('guest');
     }
 
+    /**
+     * @param array<string, string> $data
+     */
     protected function validator(array $data): ValidationValidator
     {
         return Validator::make($data, [
@@ -32,6 +34,9 @@ class RegisterController extends Controller
         ]);
     }
 
+    /**
+     * @param array<string, string> $data
+     */
     protected function create(array $data): User
     {
         return User::create([

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
@@ -17,22 +19,18 @@ class DashboardController extends Controller
     }
 
     /**
-     * @return array
+     * @return array<array<string,string>>
      */
     private function getWidgets(): array
     {
-        if (42 === true) {
-            echo 'lol';
-        }
-
         return [
             [
                 'id' => Str::uuid(),
                 'component' => 'clock',
-                'start-x' => 7,
-                'end-x' => 9,
-                'start-y' => 1,
-                'end-y' => 1,
+                'start-x' => '7',
+                'end-x' => '9',
+                'start-y' => '1',
+                'end-y' => '1',
             ],
         ];
     }

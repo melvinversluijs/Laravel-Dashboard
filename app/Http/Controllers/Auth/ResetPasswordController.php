@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -11,5 +9,8 @@ class ResetPasswordController extends Controller
 {
     use ResetsPasswords;
 
-    protected string $redirectTo = '/';
+    /**
+     * @var string
+     */
+    protected $redirectTo = '/';
 }

@@ -1,32 +1,24 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Routing\Redirector;
 use Laravel\Socialite\Facades\Socialite;
-use Throwable;
 
-use function redirect;
-
+/**
+ * Social Authentication controller.
+ */
 abstract class SocialAuthController extends Controller
 {
-    /**
-     * Get the provider.
-     */
-    abstract protected function getProvider(): string;
-
     public function redirect(): RedirectResponse
     {
         return Socialite::driver($this->getProvider())->redirect();
     }
 
     /**
-     * @return Redirector|RedirectResponse
+     * Callback handler.
      */
     public function callback()
     {
@@ -34,8 +26,8 @@ abstract class SocialAuthController extends Controller
 
         try {
             $user = Socialite::driver($provider)->user();
-        } catch (Throwable $e) {
-            return redirect('/login');
+        } catch (\Exception $e) {
+            return \redirect('/login');
         }
 
         $existingUser = User::where([
@@ -58,6 +50,11 @@ abstract class SocialAuthController extends Controller
             auth()->login($user, true);
         }
 
-        return redirect('/');
+        return \redirect('/');
     }
+
+    /**
+     * Get the provider.
+     */
+    abstract protected function getProvider(): string;
 }

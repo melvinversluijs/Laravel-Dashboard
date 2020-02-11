@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -11,7 +9,10 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected string $redirectTo = '/';
+    /**
+     * @var string
+     */
+    protected $redirectTo = '/';
 
     public function __construct()
     {

@@ -1,11 +1,17 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Http\Controllers\Auth;
 
+/**
+ * Google Authentication controller.
+ */
 class GoogleAuthController extends SocialAuthController
 {
+    /**
+     * Get provider.
+     *
+     * @return string
+     */
     protected function getProvider(): string
     {
         return 'google';

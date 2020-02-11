@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -12,23 +10,29 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
-     * @var array<string> $fillable
+     * The attributes that are mass assignable.
+     *
+     * @var array
      */
-    protected array $fillable = [
+    protected $fillable = [
         'name', 'email', 'avatar', 'provider', 'provider_id', 'password',
     ];
 
     /**
-     * @var array<string> $hidden
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
      */
-    protected array $hidden = [
+    protected $hidden = [
         'password', 'remember_token',
     ];
 
     /**
-     * @var array<string> $casts
+     * The attributes that should be cast to native types.
+     *
+     * @var array
      */
-    protected array $casts = [
+    protected $casts = [
         'email_verified_at' => 'datetime',
     ];
 }

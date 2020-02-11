@@ -1,29 +1,32 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
-use function base_path;
-
 class Kernel extends ConsoleKernel
 {
     /**
-     * @var array<int, string> $commands
+     * The Artisan commands provided by your application.
+     *
+     * @var array
      */
-    protected array $commands = [];
+    protected $commands = [];
 
-    // phpcs:disable SlevomatCodingStandard.Functions.UnusedParameter
-    protected function schedule(Schedule $schedule): void
+    /**
+     * Define the application's command schedule.
+     */
+    protected function schedule(Schedule $schedule)
     {
-        // Put schedules items here.
+        // $schedule->command('inspire')
+        //          ->hourly();
     }
-    // phpcs:enable SlevomatCodingStandard.Functions.UnusedParameter
 
-    protected function commands(): void
+    /**
+     * Register the commands for the application.
+     */
+    protected function commands()
     {
         $this->load(__DIR__ . '/Commands');
 

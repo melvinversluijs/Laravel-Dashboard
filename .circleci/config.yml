@@ -12,6 +12,9 @@ jobs:
           name: Composer version
           command: composer --version
       - run:
+          name: Composer validate
+          command: composer validate
+      - run:
           name: Composer install
           command: composer install --no-interaction
       - run:

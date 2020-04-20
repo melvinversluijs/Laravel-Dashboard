@@ -20,6 +20,9 @@ jobs:
       - run:
           name: PHP CodeSniffer
           command: composer run test:phpcs
+      - run:
+          name: PHPStan
+          command: composer run test:phpstan
 
 workflows:
   version: 2

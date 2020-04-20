@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Throwable;
 
@@ -38,7 +39,7 @@ abstract class SocialAuthController extends Controller
         ])->first();
 
         if ($existingUser) {
-            auth()->login($existingUser, true);
+            Auth::login($existingUser, true);
         } else {
             $user = User::create([
                 'name' => $user->name,
@@ -48,7 +49,7 @@ abstract class SocialAuthController extends Controller
                 'provider_id' => $user->id,
             ]);
 
-            auth()->login($user, true);
+            Auth::login($user, true);
         }
 
         return redirect('/');

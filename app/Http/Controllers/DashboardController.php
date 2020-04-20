@@ -25,7 +25,7 @@ class DashboardController extends Controller
     {
         return [
             [
-                'id' => Str::uuid(),
+                'id' => Str::uuid()->toString(),
                 'component' => 'clock',
                 'start-x' => '7',
                 'end-x' => '9',

@@ -10,3 +10,7 @@ directly to the master branch.
 ### PHP CodeSniffer
 
 The `composer run test:phpcs` command will run the PHP CodeSniffer test.
+
+### PHPStan
+
+You can use the `composer run test:phpstan` command to run the phpstan test.

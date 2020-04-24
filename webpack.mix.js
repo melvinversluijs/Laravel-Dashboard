@@ -13,7 +13,7 @@ const tailwindcss = require("tailwindcss");
  */
 
 mix.js("resources/js/app.js", "public/js").postCss(
-    "resources/css/main.css",
+    "resources/css/app.css",
     "public/css",
     [tailwindcss]
 );

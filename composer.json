@@ -65,8 +65,8 @@
             "@php artisan key:generate --ansi"
         ],
         "test:phpcs": "phpcs",
-        "test:ci:phpcs": "@test:phpcs -q --report=junit --report-file=test-results/phpcs/result.xml",
+        "test:ci:phpcs": "phpcs -q --report=junit --report-file=test-results/phpcs/result.xml",
         "test:phpstan": "phpstan analyse",
-        "test:ci:phpstan": "phpstan analyse --error-format=junit --no-interaction > test-results/phpstan/result.xml"
+        "test:ci:phpstan": "phpstan analyse --no-progress --error-format=junit --no-interaction > test-results/phpstan/result.xml"
     }
 }

@@ -67,6 +67,6 @@
         "test:phpcs": "phpcs",
         "test:ci:phpcs": "@test:phpcs --report=junit --report-file=test-results/phpcs/result.xml",
         "test:phpstan": "phpstan analyse",
-        "test:ci:phpstan": "@test:phpstan analyse --error-format=junit --no-interaction > test-results/phpstan/result.xml"
+        "test:ci:phpstan": "@test:phpstan --error-format=junit --no-interaction > test-results/phpstan/result.xml"
     }
 }

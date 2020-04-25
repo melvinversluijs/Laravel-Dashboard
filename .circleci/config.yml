@@ -25,9 +25,11 @@ jobs:
       - run:
           name: PHP CodeSniffer
           command: mkdir -p test-results/phpcs && composer run test:ci:phpcs
+          halt_build_on_fail: false
       - run:
           name: PHPStan
           command: mkdir -p test-results/phpstan && composer run test:ci:phpstan
+          halt_build_on_fail: false
       - store_test_results:
           path: test-results
       - store_artifacts:

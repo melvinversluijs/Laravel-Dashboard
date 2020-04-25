@@ -1,8 +1,13 @@
 version: 2.1
-jobs:
-  test:
+
+executors:
+  default:
     docker:
       - image: circleci/php:7.4-cli
+
+jobs:
+  test:
+    executor: default
     steps:
       - checkout
       - run:
@@ -19,10 +24,14 @@ jobs:
           command: composer install --no-interaction
       - run:
           name: PHP CodeSniffer
-          command: composer run test:phpcs
+          command: mkdir -p test-results/phpcs && composer run test:ci:phpcs
       - run:
           name: PHPStan
-          command: composer run test:phpstan
+          command: mkdir -p test-results/phpstan && composer run test:ci:phpstan
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
 
 workflows:
   version: 2

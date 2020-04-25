@@ -22,6 +22,9 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
+# Test results directory
+test-results
+
 ### Linux ###
 *~
 

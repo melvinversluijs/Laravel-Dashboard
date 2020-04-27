@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Contracts\Validation\Validator as ValidationValidator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -19,7 +18,7 @@ class RegisterController extends Controller
     /**
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = self::HOME;
 
     /**
      * @return void

@@ -30,6 +30,10 @@ jobs:
           name: PHPStan
           command: mkdir -p test-results/phpstan && composer run test:ci:phpstan
           when: always
+      - run:
+          name: PHPUnit
+          command: mkdir -p test-results/phpunit && composer run test:ci:phpunit
+          when: always
       - store_test_results:
           path: test-results
       - store_artifacts:

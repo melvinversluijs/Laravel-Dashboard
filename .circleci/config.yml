@@ -23,9 +23,6 @@ jobs:
           name: Composer install
           command: composer install --no-interaction
       - run:
-          name: Laravel generate encryption key
-          command: php artisan key:generate
-      - run:
           name: PHP CodeSniffer
           command: mkdir -p test-results/phpcs && composer run test:ci:phpcs
           when: always

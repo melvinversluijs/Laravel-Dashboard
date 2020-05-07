@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('title-suffix')
+- Login
+@endsection
+
 @section('content')
 <div class="container">
     <div>

@@ -20,54 +20,41 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-gray-200">
     <div id="app">
-        <nav>
-            <div class="container">
-                <a href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">
-                </button>
+        <nav class="border-b border-gray-400 py-2">
+            <div class="container flex justify-between items-center">
+                <div class="nav__right ">
+                    <a href="{{ url('/') }}" class="font-bold text-xl hover:text-green-400">
+                        {{ config('app.name', 'Laravel') }}
+                    </a>
+                </div>
 
-                <div id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul>
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul>
+                <div class="nav__left">
+                    <ul class="flex">
                         <!-- Authentication Links -->
                         @guest
-                        <li>
-                            <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <li class="pr-2">
+                            <a href="{{ route('login') }}" class="hover:text-green-400">
+                                {{ __('Login') }}
+                            </a>
                         </li>
-                        @if (Route::has('register'))
                         <li>
-                            <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a href="{{ route('register') }}" class="hover:text-green-400">
+                                {{ __('Register') }}
+                            </a>
                         </li>
-                        @endif
                         @else
                         <li>
-                            <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span></span>
+                            <a>{{ Auth::user()->name }}</a>
+
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
                             </a>
-
-                            <div aria-labelledby="navbarDropdown">
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                                @csrf
+                            </form>
                         </li>
                         @endguest
                     </ul>

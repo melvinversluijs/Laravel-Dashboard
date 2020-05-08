@@ -20,7 +20,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-gray-200">
+<body class="bg-gray-100">
     <div id="app">
         <nav class="border-b border-gray-400 py-2">
             <div class="container flex justify-between items-center">

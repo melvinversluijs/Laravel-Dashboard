@@ -23,6 +23,18 @@ jobs:
           name: Composer install
           command: composer install --no-interaction
       - run:
+          name: Node version
+          command: node --version
+      - run:
+          name: NPM version
+          command: npm --version
+      -run:
+          name: NPM install
+          command: npm install
+      - run:
+          name: NPM build
+          command: npm run prod
+      - run:
           name: PHP CodeSniffer
           command: mkdir -p test-results/phpcs && composer run test:ci:phpcs
           when: always

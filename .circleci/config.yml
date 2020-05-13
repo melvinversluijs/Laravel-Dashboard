@@ -28,7 +28,7 @@ jobs:
       - run:
           name: NPM version
           command: npm --version
-      -run:
+      - run:
           name: NPM install
           command: npm install
       - run:

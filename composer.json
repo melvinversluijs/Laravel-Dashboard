@@ -67,8 +67,8 @@
         ],
         "test:phpcs": "phpcs",
         "test:ci:phpcs": "phpcs -q --report=junit --report-file=test-results/phpcs/result.xml",
-        "test:phpstan": "phpstan analyse",
-        "test:ci:phpstan": "phpstan analyse --no-progress --error-format=junit --no-interaction > test-results/phpstan/result.xml",
+        "test:phpstan": "phpstan analyse --memory-limit=512M",
+        "test:ci:phpstan": "phpstan analyse --memory-limit=512M --no-progress --error-format=junit --no-interaction > test-results/phpstan/result.xml",
         "test:phpunit": "phpunit",
         "test:ci:phpunit": "phpunit --log-junit test-results/phpunit/result.xml",
         "test": [

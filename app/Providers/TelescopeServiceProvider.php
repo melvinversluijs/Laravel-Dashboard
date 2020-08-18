@@ -11,6 +11,11 @@ use Laravel\Telescope\TelescopeApplicationServiceProvider;
 
 class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 {
+    /**
+     * @var string[]
+     */
+    private $emailWhiteList = [];
+
     public function register(): void
     {
         Telescope::night();
@@ -49,7 +54,7 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
     {
         Gate::define(
             'viewTelescope',
-            static fn ($user) => in_array($user->email, []),
+            fn ($user) => in_array($user->email, $this->emailWhiteList, true),
         );
     }
 }

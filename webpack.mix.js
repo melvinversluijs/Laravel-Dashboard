@@ -16,6 +16,12 @@ mix.js("resources/js/app.js", "public/js")
     .postCss("resources/css/app.css", "public/css", [tailwindcss])
     .disableNotifications();
 
+mix.options({
+    terser: {
+        extractComments: false
+    }
+})
+
 if (mix.inProduction()) {
     mix.version();
 }

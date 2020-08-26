@@ -9,12 +9,12 @@
     "license": "MIT",
     "require": {
         "php": "~7.4.0",
+        "fideloper/proxy": "^4.0",
         "laravel/framework": "^7.0",
+        "laravel/socialite": "^4.3",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "laravel/socialite": "^4.3",
-        "fideloper/proxy": "^4.0",
-        "nunomaduro/collision": "^4.2"
+        "nunomaduro/collision": "^5.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -75,6 +75,7 @@
             "@test:phpcs",
             "@test:phpstan",
             "@test:phpunit"
-        ]
+        ],
+        "extra": "uname"
     }
 }
